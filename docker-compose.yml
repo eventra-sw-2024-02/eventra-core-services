@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  event-management-service:
+    build:
+      context: ./event-management-service
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT_EVENT_MANAGEMENT_SERVICE}:8080"
+
+  payment-service:
+    build:
+      context: ./payment-service
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT_PAYMENT_SERVICE}:8080"
+
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT_USER_SERVICE}:8080"
